@@ -22,16 +22,26 @@ public class ArrangeArrayWithAlternateNegAndPosNumbers {
 		for (int i = 0; i < n - 1; i++) {
 			int j = i + 1;
 
+			/*
+			 * If there is a postive integer at even position then find the next negative
+			 * integer and rotate the array
+			 */
 			if (i % 2 == 0 && arr[i] >= 0) {
 
 				while (j < n && arr[j] >= 0)
 					j++;
+				// if we reached end of array,then break
 				if (j == n)
 					break;
 
 				rotate(arr, i, j);
 
-			} else if (arr[i] < 0 && i % 2 == 1) {
+			}
+			/*
+			 * If there is a negative integer at odd position then find the positive integer
+			 * and rotate the array
+			 */
+			else if (arr[i] < 0 && i % 2 == 1) {
 				while (j < n && arr[j] < 0)
 					j++;
 				if (j == n)
@@ -46,7 +56,7 @@ public class ArrangeArrayWithAlternateNegAndPosNumbers {
 	private static void rotate(int[] arr, int i, int j) {
 		int temp = arr[j];
 		int k;
-
+		// Right rotate array
 		for (k = j; k > i; k--)
 			arr[k] = arr[k - 1];
 
