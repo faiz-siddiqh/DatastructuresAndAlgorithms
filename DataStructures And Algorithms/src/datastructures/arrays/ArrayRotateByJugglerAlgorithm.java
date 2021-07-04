@@ -1,20 +1,24 @@
 package datastructures.arrays;
 
+/**
+ * 
+ * Rotate a given array with length n ,d times using Juggler Algorithm
+ *
+ */
 public class ArrayRotateByJugglerAlgorithm {
 
 	private int findGCD(int a, int b) {
-		if (b == 0) {
+		if (b == 0)
 			return a;
-		} else {
-			return findGCD(b, a % b);
-		}
+
+		return findGCD(b, a % b);
 
 	}
 
 	private void printArray(int[] arr) {
-		for (int each : arr) {
+		for (int each : arr)
 			System.out.print(each + " ");
-		}
+
 	}
 
 	private int[] rotate(int[] arr, int d, int n) {
@@ -28,12 +32,12 @@ public class ArrayRotateByJugglerAlgorithm {
 			temp = arr[i];
 			while (true) {
 				k = j + d;
-				if (k >= n) {
+				if (k >= n)
 					k = k - n;
-				}
-				if (k == i) {
+
+				if (k == i)
 					break;
-				}
+
 				arr[j] = arr[k];
 				j = k;
 
