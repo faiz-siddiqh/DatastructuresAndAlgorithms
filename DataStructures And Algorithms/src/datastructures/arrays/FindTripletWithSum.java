@@ -43,7 +43,6 @@ public class FindTripletWithSum {
 					j++;
 
 			}
-
 		}
 
 		return false;
