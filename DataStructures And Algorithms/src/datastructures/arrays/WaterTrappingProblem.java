@@ -3,7 +3,7 @@ package datastructures.arrays;
 public class WaterTrappingProblem {
 
 	public static void main(String[] args) {
-		int[] arr = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+		int[] arr = { 7,4,0,9 };
 		int n = arr.length;
 		System.out.println(maxWater(arr, n));
 		System.out.println(maxWaterCapacity(arr, n));
