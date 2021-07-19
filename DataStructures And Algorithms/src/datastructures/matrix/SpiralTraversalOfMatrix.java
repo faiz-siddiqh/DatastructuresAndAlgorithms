@@ -3,9 +3,10 @@ package datastructures.matrix;
 public class SpiralTraversalOfMatrix {
 
 	public static void main(String[] args) {
-		int r = 4;
-		int c = 4;
-		int matrix[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+		int r = 3;
+		int c = 5;
+//		int matrix[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+		int matrix[][] = { { 6, 6, 2, 28, 2 }, { 12, 26, 3, 28, 7 }, { 22, 25, 3, 4, 23 } };
 		spirallyTraverseMatrix(matrix, r, c);
 	}
 
@@ -26,26 +27,37 @@ public class SpiralTraversalOfMatrix {
 		while (k < m && l < n) {
 			int i;
 
-			// Printing the matrix from left to right
-			for (i = l; i < n - 1; i++)
-				System.out.print(matrix[l][i] + " ");
-
-			// printing the matrix from top right to bottom
-			for (i = k; i < m - 1; i++)
-				System.out.print(matrix[i][n - 1] + " ");
-			// printing the matrix from bottom right to left
-			for (i = n - 1; i > l; i--)
-				System.out.print(matrix[m - 1][i] + " ");
-
-			// printing the matrix from the left bottom to top left
-			for (i = m - 1; i > k; i--)
-				System.out.print(matrix[i][l] + " ");
-
-			// incrementing and decrementing the values of the variables
+			// Print the first row from the remaining rows
+			for (i = l; i < n; ++i) {
+				System.out.print(matrix[k][i] + " ");
+			}
 			k++;
-			l++;
+
+			// Print the last column from the remaining
+			// columns
+			for (i = k; i < m; ++i) {
+				System.out.print(matrix[i][n - 1] + " ");
+			}
 			n--;
-			m--;
+
+			// Print the last row from the remaining rows */
+			if (k < m) {
+				for (i = n - 1; i >= l; --i) {
+					System.out.print(matrix[m - 1][i] + " ");
+				}
+				m--;
+			}
+
+			// Print the first column from the remaining
+			// columns */
+			if (l < n) {
+				for (i = m - 1; i >= k; --i) {
+					System.out.print(matrix[i][l] + " ");
+				}
+				l++;
+
+			}
+
 		}
 	}
 
