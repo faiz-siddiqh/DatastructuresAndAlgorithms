@@ -8,13 +8,15 @@ public class MergeIntervals {
 
 	public static void main(String[] args) {
 
-		Interval[] arr = new Interval[4];
-		arr[0] = new Interval(6, 8);
-		arr[1] = new Interval(1, 9);
-		arr[2] = new Interval(2, 4);
+		Interval[] arr = new Interval[6];
+		arr[0] = new Interval(1, 10);
+		arr[1] = new Interval(2, 9);
+		arr[2] = new Interval(3, 8);
 		arr[3] = new Interval(4, 7);
+		arr[4] = new Interval(5, 6);
+		arr[5] = new Interval(6, 6);
 		int arr_size = arr.length;
-
+//1, 10), (2, 9), (3, 8), (4, 7), (5, 6), (6, 6)
 		mergeIntervals(arr, arr_size);
 	}
 
