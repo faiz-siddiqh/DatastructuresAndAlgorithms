@@ -1,5 +1,11 @@
 package datastructures.linkedlist;
 
+/**
+ * Write a Program to reverse the Linked List. (Both Iterative and recursive)
+ * 
+ *
+ * 
+ */
 public class ReverseLinkedList {
 
 	static Node head;
