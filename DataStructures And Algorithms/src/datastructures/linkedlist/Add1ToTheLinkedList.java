@@ -1,7 +1,7 @@
 package datastructures.linkedlist;
 
 /**
- * Write a Program to reverse the Linked List. (Both Iterative and recursive)
+ * Write a Program to Add 1 to the number represented in Linked List.
  * 
  */
 public class Add1ToTheLinkedList {
