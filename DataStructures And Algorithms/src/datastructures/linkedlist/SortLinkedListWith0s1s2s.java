@@ -64,22 +64,6 @@ public class SortLinkedListWith0s1s2s {
 
 	}
 
-	public static Node reverse(Node lead) {
-
-		Node cur = lead;
-		Node next = null;
-		Node prev = null;
-
-		while (cur != null) {
-			next = cur.next;
-			cur.next = prev;
-			prev = cur;
-			cur = next;
-		}
-		lead = prev;
-		return lead;
-	}
-
 	public static void main(String[] args) {
 		SortLinkedListWith0s1s2s ll = new SortLinkedListWith0s1s2s();
 		ll.push(1);
