@@ -58,7 +58,7 @@ public class QuickSortLinkedList {
 	 * @return
 	 */
 	private void quickSort(Node start, Node end) {
-		if (start == null || start.next == end || end == null)
+		if (start == null || start == end.next || start == end)
 			return;
 
 		Node pivotNode = partition(start, end);
