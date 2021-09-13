@@ -5,15 +5,11 @@ package datastructures.binaryTree;
  */
 import java.util.Stack;
 
-class Node {
-	int data;
-	Node left;
-	Node right;
-
-	public Node(int data) {
-		this.data = data;
-	}
-}
+/*
+ * class Node { int data; Node left; Node right;
+ * 
+ * public Node(int data) { this.data = data; } }
+ */
 
 public class TraversalsInBinaryTree {
 	Node root;
