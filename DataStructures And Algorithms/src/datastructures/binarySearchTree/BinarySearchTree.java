@@ -1,4 +1,4 @@
-package datstructures.binarySearchTree;
+package datastructures.binarySearchTree;
 
 import datastructures.binaryTree.Node;
 
