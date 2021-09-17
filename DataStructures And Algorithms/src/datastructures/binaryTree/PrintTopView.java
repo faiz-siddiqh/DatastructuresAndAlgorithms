@@ -16,6 +16,12 @@ class Pair {
 	}
 }
 
+/**
+ * Top view of a binary tree is the set of nodes visible when the tree is viewed
+ * from the top. Given a binary tree, print the top view of it. The output nodes
+ * can be printed in any order.
+ * 
+ */
 public class PrintTopView {
 	Node root;
 
