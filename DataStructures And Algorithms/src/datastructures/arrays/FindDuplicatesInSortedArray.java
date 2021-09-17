@@ -13,6 +13,7 @@ package datastructures.arrays;
  *
  */
 public class FindDuplicatesInSortedArray {
+	
 	public static int removeDuplicates(int[] nums) {
 		if (nums.length == 0)
 			return 0;
@@ -33,7 +34,7 @@ public class FindDuplicatesInSortedArray {
 						break;
 					}
 					j++;
-					if (j == len)//no greater element is forund in the array ,right to nums[i]
+					if (j == len)//no greater element is found in the array ,right to nums[i]
 						flag = false;
 				}
 
