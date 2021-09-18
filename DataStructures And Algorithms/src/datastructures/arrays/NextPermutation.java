@@ -37,7 +37,7 @@ public class NextPermutation {
 		// traverse from back till index1 and find index where the number is greater
 		// than number at index1 and swap it
 		if (i >= 0) {
-			while (arr[index2] < arr[i])
+			while (arr[index2] <= arr[i])
 				index2--;
 			swap(arr, i, index2);
 		}
