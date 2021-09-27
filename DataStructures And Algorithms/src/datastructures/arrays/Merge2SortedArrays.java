@@ -56,7 +56,43 @@ public class Merge2SortedArrays {
 	}
 
 	/**
-	 * This method has time Complexity of O(NlogN) +O(N)+O(N)
+	 * Best solution This method has time Complexity of O(N+M*log(N+M)) and space
+	 * complexity of O(1)
+	 * 
+	 * @param arr1
+	 * @param arr2
+	 * @param n
+	 * @param m
+	 */
+	private static void merge_Sol3(int[] arr1, int[] arr2, int n, int m) {
+
+		if (n == 0 || m == 0)
+			return;
+
+		int i = 0;
+		int j = 0;
+		int k = n - 1;
+
+		while (i <= k && j < m) {
+			if (arr2[j] < arr1[i]) {// we will replace the lesser values in arr2 to the last of arr1 by swapping
+				int temp = arr1[k];
+				arr1[k] = arr2[j];
+				arr2[j] = temp;
+				k--;
+				j++;
+			} else {
+				i++;
+			}
+		}
+
+		Arrays.sort(arr1);// we sort the arrays as they are in unsorted after swapping
+		Arrays.sort(arr2);
+
+	}
+
+	/**
+	 * This method has time Complexity of O(NlogN) +O(N)+O(N) and space complexity
+	 * of O(N)
 	 * 
 	 * @param arr1
 	 * @param arr2
