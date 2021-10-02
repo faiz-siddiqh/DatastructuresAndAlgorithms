@@ -47,6 +47,13 @@ public class MultiplyTwoNumbersLL {
 
 	}
 
+	/**
+	 * Multiply and return the product of Two Linked List
+	 * 
+	 * @param l1
+	 * @param l2
+	 * @return
+	 */
 	public long multiplyTwoLists(Node l1, Node l2) {
 		long N = 1000000007;
 		long prod1 = 0;
