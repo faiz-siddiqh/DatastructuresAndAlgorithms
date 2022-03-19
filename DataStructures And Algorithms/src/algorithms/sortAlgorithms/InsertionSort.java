@@ -12,9 +12,8 @@ public class InsertionSort {
 
 			int i;
 
-			for (i = firstUnsortedIndex; i > 0 && arr[i - 1] > newElement; i--) {
+			for (i = firstUnsortedIndex; i > 0 && arr[i - 1] > newElement; i--)
 				arr[i] = arr[i - 1];
-			}
 
 			arr[i] = newElement;
 
@@ -22,9 +21,8 @@ public class InsertionSort {
 
 		System.out.println("Array after sorting :");
 
-		for (int i = 0; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++)
 			System.out.print(arr[i] + " ");
-		}
 
 	}
 
