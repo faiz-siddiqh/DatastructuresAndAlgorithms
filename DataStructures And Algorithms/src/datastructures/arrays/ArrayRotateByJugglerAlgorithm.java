@@ -1,7 +1,7 @@
 package datastructures.arrays;
 
 /**
- * 
+ * @author Faiz-Siddiqh
  * Rotate a given array with length n ,d times using Juggler Algorithm
  *
  */
