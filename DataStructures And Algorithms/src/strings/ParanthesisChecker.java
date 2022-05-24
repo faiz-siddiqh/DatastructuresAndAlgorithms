@@ -19,6 +19,35 @@ public class ParanthesisChecker {
 	}
 
 	private static boolean isBalanced(String str) {
+
+		Stack<Character> stack = new Stack<>();
+
+		for (char ch : str.toCharArray()) {
+
+			if (ch == '[' || ch == '{' || ch == '(')
+				stack.push(ch);
+			else if (stack.isEmpty())
+				return false;
+			else if (ch == '}' && stack.peek() == '{')
+				stack.pop();
+			else if (ch == ']' && stack.peek() == '[')
+				stack.pop();
+			else if (ch == ')' && stack.peek() == '(')
+				stack.pop();
+			else
+				stack.push(ch);
+
+		}
+
+		return stack.isEmpty();
+
+	}
+
+	/**
+	 * Alternative Solution
+	 */
+
+	private static boolean isBalance(String str) {
 		if (str.length() < 1)
 			return false;
 
