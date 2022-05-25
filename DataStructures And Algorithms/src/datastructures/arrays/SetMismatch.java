@@ -25,6 +25,9 @@ public class SetMismatch {
 
 		int[] result = new int[2];
 
+		// We loop through the array and find value of the index element and if they are
+		// positive we turn to negative ,where as for a repeated number if its index has
+		// a negative number ,it shows that its repeated
 		for (int i = 0; i < arr.length; i++) {
 
 			int index = Math.abs(arr[i]) - 1;
@@ -34,7 +37,9 @@ public class SetMismatch {
 				result[0] = index + 1;
 
 		}
-
+		// we loop through the array again and turn all the negative value to their
+		// original value but the position of the positive element is the original
+		// element
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] < 0)
 				arr[i] = -arr[i];
