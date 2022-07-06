@@ -12,8 +12,8 @@ package datastructures.arrays;
  * denotes that Teemo attacks Ashe at second timeSeries[i], and an integer
  * duration.
  * 
- * Return the total number of seconds that Ashe is poisoned. 
- * LC - 495 -https://leetcode.com/problems/teemo-attacking/
+ * Return the total number of seconds that Ashe is poisoned. LC - 495
+ * -https://leetcode.com/problems/teemo-attacking/
  * 
  * @author Faiz-Siddiqh
  *
