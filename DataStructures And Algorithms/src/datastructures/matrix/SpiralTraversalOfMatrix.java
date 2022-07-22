@@ -1,64 +1,65 @@
 package datastructures.matrix;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SpiralTraversalOfMatrix {
 
 	public static void main(String[] args) {
-		int r = 3;
-		int c = 5;
+		
 //		int matrix[][] = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
 		int matrix[][] = { { 6, 6, 2, 28, 2 }, { 12, 26, 3, 28, 7 }, { 22, 25, 3, 4, 23 } };
-		spirallyTraverseMatrix(matrix, r, c);
+		for (int each : spiralOrder(matrix))
+			System.out.print(each + " ");
 	}
 
 	/**
 	 * This approach has a time complexity of O(rc) and spaceComplexity of O(1)
 	 * 
 	 * @param matrix
-	 * @param r
-	 * @param c
 	 */
-	private static void spirallyTraverseMatrix(int[][] matrix, int r, int c) {
+	public static List<Integer> spiralOrder(int[][] matrix) {
 
-		int k = 0; // variable to track the rows
-		int m = r; // variable to track the last row
-		int l = 0;// variable to keep track of columns from first
-		int n = c; // columns from last
+		int rowBegin = 0;
+		int rowEnd = matrix.length - 1;
+		int colBegin = 0;
+		int colEnd = matrix[0].length - 1;
 
-		while (k < m && l < n) {
-			int i;
+		List<Integer> ans = new ArrayList<>();
 
-			// Print the first row from the remaining rows
-			for (i = l; i < n; ++i) {
-				System.out.print(matrix[k][i] + " ");
-			}
-			k++;
+		while (rowBegin <= rowEnd && colBegin <= colEnd) {
 
-			// Print the last column from the remaining
-			// columns
-			for (i = k; i < m; ++i) {
-				System.out.print(matrix[i][n - 1] + " ");
-			}
-			n--;
+			for (int i = colBegin; i <= colEnd; i++)
+				ans.add(matrix[rowBegin][i]);
 
-			// Print the last row from the remaining rows */
-			if (k < m) {
-				for (i = n - 1; i >= l; --i) {
-					System.out.print(matrix[m - 1][i] + " ");
-				}
-				m--;
-			}
+			rowBegin++;
 
-			// Print the first column from the remaining
-			// columns */
-			if (l < n) {
-				for (i = m - 1; i >= k; --i) {
-					System.out.print(matrix[i][l] + " ");
-				}
-				l++;
+			for (int i = rowBegin; i <= rowEnd; i++)
+				ans.add(matrix[i][colEnd]);
+
+			colEnd--;
+
+			if (rowBegin <= rowEnd) {
+
+				for (int i = colEnd; i >= colBegin; i--)
+					ans.add(matrix[rowEnd][i]);
 
 			}
+
+			rowEnd--;
+
+			if (colBegin <= colEnd) {
+
+				for (int i = rowEnd; i >= rowBegin; i--)
+					ans.add(matrix[i][colBegin]);
+
+			}
+
+			colBegin++;
 
 		}
-	}
 
+		return ans;
+
+	}
 }
